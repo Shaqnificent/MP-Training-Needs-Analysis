@@ -20,7 +20,7 @@ function Navbar() {
         
         </div>
         <div className='navRoute'> 
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/about">About Us</Link>
             <Link to="/contact">Contact</Link>
         </div>

@@ -1,0 +1,99 @@
+.sidebarContainer{
+    background-color: white;
+    flex: 1;
+    max-width: 200px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logoIcon{
+        margin: 20px 0px;
+    }
+    .sidebarLogo{
+        max-width: 50px;
+    }
+
+    .userDetails{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px;        
+        min-width: 165px;
+        max-width: 165px;
+        border-bottom: 1px solid lightgrey;
+        margin: 5px;
+        // width: 100%;
+        .userIcon{
+            width: 35px;
+            max-width: 35px;
+            height: 35px;
+            display: flex;
+            border-radius: 100%;
+            background-color: #00A8E0;
+            justify-content: center;
+            align-items: center;
+            flex: 2;
+            margin-right: 15px;
+        }
+        .userInfo{
+            flex: 3;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 35px;
+            justify-content: center;
+            .title{
+                font-weight: bold;
+                font-size: 14px;
+                color: #00A8E0;
+                line-height: 12px;
+            }
+            .role{
+                line-height: 12px;
+            }
+        }
+    }
+
+    .sideRoutes{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 20px 0;
+        .linkContainer{
+            display: flex;
+            min-width: 150px;
+            .icon{
+                flex: 1.5;
+            }
+            .linkTitle{
+                flex: 3.5;
+                a{
+                    color: grey;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .logoutContainer{
+        background-color: #00A8E0;
+        min-width: 150px;
+        height: 35px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px;
+        align-items: center;
+        padding: 0 15px;
+        .icon{
+            flex: 1.5
+        }
+        .linkTitle{
+            flex: 3.5;
+            a{
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+            }   
+        }
+    }
+}

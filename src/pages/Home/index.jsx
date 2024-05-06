@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './home.scss'
 import logo from '../../assets/home/logo.svg'
+import { useNavigate } from 'react-router-dom';
 function Home() {
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
     const handleChange = (event) => {
         const name = event.target.name;
@@ -13,7 +15,6 @@ function Home() {
         event.preventDefault();
         console.log(inputs);
       }
-    
   return (
     <div className='homeContainer'>
         <div className='homeBackground'>
@@ -35,7 +36,6 @@ function Home() {
                     <div
                         style={{
                             display: "flex",
-                            justifyContent: "center",
                             alignItems: "center",
                             flexDirection: "column", 
                             justifyContent: "space-around",
@@ -89,7 +89,13 @@ function Home() {
                         </div>
 
                         <div>
-                            <button style={{height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "12px", width: "100px"}}>Login</button>
+                            <button style={{height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "12px", width: "100px"}}
+                                onClick={()=>{
+                                    navigate('/manager/dashboard')
+                                }}
+                            >
+                                Login
+                            </button>
                         </div>
                     </div>
                     
