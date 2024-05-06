@@ -1,0 +1,78 @@
+.homeContainer{
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 90px);
+    background-color: rgb(223, 223, 223);
+    @media (max-width: 750px) {
+        flex-direction: column;
+        .detailsContainer{
+            display: none !important;
+        }
+        img{
+            max-width: 75px;
+        }
+        .homeBackground{
+            max-height: 150px;
+        }
+    }
+    .homeBackground{
+        display: flex;
+        justify-content: center;
+        flex: 50;
+        background-color: rgb(255, 252, 239);
+        background-image: url('../../assets/home/bg.svg');
+        background-repeat: no-repeat, repeat;
+        background-size: cover;
+        background-position: bottom;
+        flex-direction: column;
+        align-items: center;
+        .detailsContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #002868;
+        }
+    }
+
+    .loginContainer{
+        flex: 50;
+        background-color: white;
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        @media (max-width: 750px) {
+            border-radius: 50px 50px 0 0;
+        }
+        .loginHeader{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            .main{
+                font-size: 34px;
+                font-weight: bold;
+                line-height: 30px;
+            }
+            .sub{
+                font-size: 9px;
+            }
+        }
+        .loginForm{
+            min-width: 250px;
+            min-height: 400px;
+            border: 1px solid rgb(242, 242, 242);
+            border-radius: 25px;
+            box-shadow: 2px 2px lightgrey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }   
+    }
+}
+
+form{
+    height: 70%;
+}
