@@ -1,0 +1,68 @@
+.dashContainer{
+    background-color: white;
+    height: 225px;
+    width: 325px;
+    border-radius: 15px;
+    .dashProfile{
+        height: 45%;
+        border-radius: 15px 15px 0 0;
+        background-color: #F2F2F2;
+        padding: 20px;
+        box-sizing: border-box;
+        .userDetails{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;       
+            // width: 100%;
+            .userIcon{
+                width: 35px;
+                max-width: 35px;
+                height: 35px;
+                display: flex;
+                border-radius: 100%;
+                background-color: #002868;
+                justify-content: center;
+                align-items: center;
+                flex: 2;
+                margin-right: 15px;
+            }
+            .userInfo{
+                flex: 3;
+                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+                height: 35px;
+                justify-content: center;
+                .title{
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: #002868;
+                    line-height: 16px;
+                }
+                .role{
+                    line-height: 16px;
+                    color: black;
+                }
+            }
+        }
+    }
+    .dashAddContainer{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 25px;
+    }
+    .dashAdd{
+        background-color: #97bfff;
+        min-width: 35px;
+        max-width: 35px;
+        max-height: 35px;
+        min-height: 35px;
+        display: flex;
+        border-radius: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .dashAdd:hover{
+        background-color: #002868;
+    }
+}
