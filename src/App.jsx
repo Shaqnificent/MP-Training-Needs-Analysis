@@ -10,6 +10,7 @@ import Trainees from './pages/User/Manager/Trainees'
 import Courses from './pages/User/Manager/Courses'
 import './App.css'
 import { Route, Routes} from "react-router-dom"
+import Surveys from './pages/User/Manager/Surveys'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +28,7 @@ function App() {
             <Route  path='trainees' element={<Trainees/>}/>
             <Route  path='courses' element={<Courses/>}/>
             <Route  path='reports' element={<Reports/>}/>
+            <Route  path='surveys' element={<Surveys/>}/>
           </Route>
         </Routes>
       </div>

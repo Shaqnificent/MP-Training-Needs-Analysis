@@ -62,7 +62,7 @@ function Sidebar() {
         <div className='linkContainer'>
             <span className='icon'><img className='linkIcon' src={survey} alt="" /></span>
             <span className='linkTitle'>
-              <Link to="/manager/reports">
+              <Link to="/manager/surveys">
                 Surveys
               </Link>
             </span>
@@ -72,7 +72,7 @@ function Sidebar() {
       <div className='logoutContainer'>
           <span className='icon'><img className='linkIcon' src={logout} alt="" /></span>
           <span className='linkTitle'>
-            <Link to="/manager/dashboard">
+            <Link to="/">
               Logout
             </Link>
           </span>
