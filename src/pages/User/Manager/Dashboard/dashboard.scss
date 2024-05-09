@@ -8,6 +8,8 @@
     .dashContainerItems{
         width: 100%;
         max-height: 600px;
+        overflow-y: scroll;
+        gap: 10px;
         height: 100%;
         display: grid;
         grid-template-columns: auto auto auto;
