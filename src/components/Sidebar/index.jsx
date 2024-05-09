@@ -5,6 +5,7 @@ import dashboard from '../../assets/sidebar/dashboard.svg'
 import trainees from '../../assets/sidebar/trainees.svg'
 import courses from '../../assets/sidebar/Courses.svg'
 import reports from '../../assets/sidebar/reports.svg'
+import survey from '../../assets/sidebar/survey.svg'
 import logout from '../../assets/sidebar/logout.svg'
 
 import './sidebar.scss'
@@ -55,6 +56,14 @@ function Sidebar() {
             <span className='linkTitle'>
               <Link to="/manager/reports">
                 Reports
+              </Link>
+            </span>
+        </div>
+        <div className='linkContainer'>
+            <span className='icon'><img className='linkIcon' src={survey} alt="" /></span>
+            <span className='linkTitle'>
+              <Link to="/manager/reports">
+                Surveys
               </Link>
             </span>
         </div>

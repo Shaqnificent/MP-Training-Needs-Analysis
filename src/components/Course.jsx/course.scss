@@ -1,4 +1,4 @@
-.dashContainer{
+.couContainer{
     background-color: white;
     height: 225px;
     width: 325px;
@@ -50,12 +50,19 @@
         display: flex;
         justify-content: flex-end;
         padding-right: 25px;
+        position: absolute;
+        right: 0px;
+        bottom: 10px;
+    }
+    .courseDetails{
+        height: 55%;
+        position: relative;
     }
     .dashAdd{
         background-color: #97bfff;
         min-width: 35px;
-        max-width: 35px;
-        max-height: 35px;
+        max-width: 55px;
+        max-height: 55px;
         min-height: 35px;
         display: flex;
         border-radius: 100%;
