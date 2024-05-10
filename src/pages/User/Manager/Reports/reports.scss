@@ -1,9 +1,8 @@
-.reportsContainer{
+.reportsContainerParent{
     padding: 10px;
+    box-sizing: border-box;
     flex: 4;
     background-color: #fff3da;
-
-    h1{
-        color: black;
-    }
+    height: 100%;
+    overflow-y: scroll;
 }

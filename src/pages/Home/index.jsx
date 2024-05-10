@@ -3,18 +3,49 @@ import './home.scss'
 import logo from '../../assets/home/logo.svg'
 import { useNavigate } from 'react-router-dom';
 function Home() {
+    const users = {
+        user1: {
+          username: "tracy",
+          password: "123",
+          role: "manager"
+        },
+        user2: {
+          username: "tom",
+          password: "123",
+          role: "trainee"
+        }
+      };
+      
     const navigate = useNavigate();
-    const [inputs, setInputs] = useState({});
-    const handleChange = (event) => {
-        const name = event.target.name;
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const handleNameChange = (event) => {
         const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
+        setUserName(value)
+    }
+    const handlePasswordChange = (event) => {
+        const value = event.target.value;
+        setPassword(value)
+    }
+
+    function handleSubmit() {
+        let isValidUser = false; // Flag to check if user is valid
+      
+        // Loop through each user in the users object
+        for (const key in users) {
+          if (users[key].username === userName && users[key].password === password) {
+            isValidUser = true;
+            navigate('/manager/dashboard')
+            break; // Exit the loop if user is found
+          }
+        }
+      
+        // If no valid user is found, display an alert
+        if (!isValidUser) {
+          alert("Invalid login details. Please try again.");
+        }
       }
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(inputs);
-      }
+      
   return (
     <div className='homeContainer'>
         <div className='homeBackground'>
@@ -47,28 +78,14 @@ function Home() {
                             <input 
                                 type="text" 
                                 name="username" 
-                                value={inputs.username || ""} 
-                                onChange={handleChange}
+                                value={userName || ""} 
+                                onChange={handleNameChange}
                                 style={{
                                     background: "white",
                                     margin: "5px 0",
                                     border: "1px solid lightgrey",
-                                    borderRadius: "5px"
-                                }}
-                            />
-                        </div>
-                        <div>
-                            <div style={{color: "grey", fontSize: "12px"}}>Email</div>
-                            <input 
-                                type="text" 
-                                name="username" 
-                                value={inputs.username || ""} 
-                                onChange={handleChange}
-                                style={{
-                                    background: "white",
-                                    margin: "5px 0",
-                                    border: "1px solid lightgrey",
-                                    borderRadius: "5px"
+                                    borderRadius: "5px",
+                                    color: "black"
                                 }}
                             />
                         </div>
@@ -77,21 +94,23 @@ function Home() {
                             <input 
                                 type="text" 
                                 name="username" 
-                                value={inputs.username || ""} 
-                                onChange={handleChange}
+                                value={password || ""} 
+                                onChange={handlePasswordChange}
                                 style={{
                                     background: "white",
                                     margin: "5px 0",
                                     border: "1px solid lightgrey",
-                                    borderRadius: "5px"
+                                    borderRadius: "5px",
+                                    color: "black"
                                 }}
                             />
                         </div>
 
                         <div>
-                            <button style={{height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "12px", width: "100px"}}
+                            <button style={{height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "12px", width: "100px", backgroundColor: "#002868", color: "white"}}
                                 onClick={()=>{
-                                    navigate('/manager/dashboard')
+                                    // handleSubmit()
+                                    // // navigate('/manager/dashboard')
                                 }}
                             >
                                 Login
