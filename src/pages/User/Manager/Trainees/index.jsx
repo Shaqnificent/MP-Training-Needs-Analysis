@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import elipsis from '../../../../assets/trainee/elipsis.svg'
 import search from '../../../../assets/trainee/search.svg'
 import './trainees.scss'
+import AddTraineeModal from '../../../../components/Trainee/AddTraineeModal'
 function Trainees() {
-
-  const trainees = [
+  const [isOpen, setIsOpen] = useState(false);
+  const [trainees, setTrainees] = useState([
     { name: "Gary Black", role: "Developer", projectCode: "Web1080", status: "Pending", priority: "High" },
     { name: "Anna Smith", role: "Designer", projectCode: "Design360", status: "Active", priority: "Medium" },
     { name: "Tom Brown", role: "Project Manager", projectCode: "PM900", status: "Completed", priority: "Low" },
@@ -16,10 +17,15 @@ function Trainees() {
     { name: "Sarah Miller", role: "System Administrator", projectCode: "Sys500", status: "Pending", priority: "Medium" },
     { name: "Carlos Gomez", role: "Backend Developer", projectCode: "Dev300", status: "Active", priority: "High" },
     { name: "Emily Howard", role: "Product Manager", projectCode: "PM950", status: "Completed", priority: "Low" }
-];
+  ]);
+
+  const addTrainee = (trainee) => {
+    setTrainees([...trainees, trainee]);
+  };
 
   return (
     <div className='traineesContainer'>
+      <AddTraineeModal addTrainee={addTrainee} isOpen={isOpen} setIsOpen={setIsOpen}/>
       <div className='filterContainer'>
         <div className="searchContainer">
           <input type="text" id="myInput" onKeyUp="myFunction()" placeholder="Search for names..." title="Type in a name" />
@@ -27,7 +33,7 @@ function Trainees() {
               <img src={search} alt="" />
           </span>
         </div>
-        <div style={{display: "flex", justifyContent: "Center", alignItems: "center", gap: "10px"}}> 
+        <div onClick={() => setIsOpen(true)} style={{display: "flex", justifyContent: "Center", alignItems: "center", gap: "10px"}}> 
             <span className='traineeAdd'>
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.84091 16.7386V0.647726H10.9091V16.7386H6.84091ZM0.829545 10.7273V6.65909H16.9205V10.7273H0.829545Z" fill="white"/>
