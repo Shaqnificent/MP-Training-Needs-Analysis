@@ -1,0 +1,39 @@
+.courseContainer{
+    flex: 4;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fff3da;
+    justify-content: center;
+    flex-direction: column;
+    .courseContainerItems{
+        width: 100%;
+        max-height: 600px;
+        overflow-y: scroll;
+        gap: 10px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-around;
+    }
+    .courseHeader{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        .courseAdd{
+            background-color: #97bfff;
+            min-width: 35px;
+            max-width: 35px;
+            max-height: 35px;
+            min-height: 35px;
+            display: flex;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}

@@ -5,8 +5,6 @@ import socialLogo from '../../assets/nav/socials.svg'
 import './nav.scss'
 import { Link } from 'react-router-dom'
 function Navbar() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className='navParent'>
         <div className='navContainer'>
@@ -21,8 +19,8 @@ function Navbar() {
         </div>
         <div className='navRoute'> 
             <Link to="/">Home</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact</Link>
+            {/* <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact</Link> */}
         </div>
     </div>
   )

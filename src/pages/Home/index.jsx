@@ -3,16 +3,19 @@ import './home.scss'
 import logo from '../../assets/home/logo.svg'
 import { useNavigate } from 'react-router-dom';
 function Home() {
+    // Get user role from session storage
+    //const userRole = sessionStorage.getItem('userRole');
+
     const users = {
         user1: {
-          username: "tracy",
+          username: "Tracy",
           password: "123",
-          role: "manager"
+          role: "Manager"
         },
         user2: {
-          username: "tom",
+          username: "Tom",
           password: "123",
-          role: "trainee"
+          role: "Trainee"
         }
       };
       
@@ -35,7 +38,15 @@ function Home() {
         for (const key in users) {
           if (users[key].username === userName && users[key].password === password) {
             isValidUser = true;
-            navigate('/manager/dashboard')
+            // Set user role in session storage
+            sessionStorage.setItem('userRole', users[key].role);
+            sessionStorage.setItem('userName', userName);
+            if (users[key].role == "Manager"){
+                navigate('/manager/dashboard')
+            }
+           else{
+                navigate('/trainee/dashboard')
+           }
             break; // Exit the loop if user is found
           }
         }

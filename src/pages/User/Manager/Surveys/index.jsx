@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './surveys.scss'
-import Course from '../../../../components/Course.jsx';
+import Course from '../../../../components/Course/index.jsx';
 import Survey from '../../../../components/Survey/index.jsx';
 function Surveys() {
 
