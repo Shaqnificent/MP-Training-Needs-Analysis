@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './addTrainee.scss'
+import React, { useState, useContext } from 'react';
+import './addTrainee.scss';
+import { useUserContext } from '../../../UserContext'; // Confirm this path is correct
 
-function AddTraineeModal({ addTrainee, isOpen, setIsOpen}) {
+function AddTraineeModal({ isOpen, setIsOpen }) {
+  const { addUser } = useUserContext(); // Using addUser from UserContext
   const roles = ["Trainee", "Manager", "Admin"];
   const positions = ["Software Developer", "Project Manager", "Product Manager", "Data Scientist", "UX/UI Designer"];
 
@@ -11,22 +13,27 @@ function AddTraineeModal({ addTrainee, isOpen, setIsOpen}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTrainee({
-      name,
+    addUser({
+      username: name,
+      name: name,
+      password: "default", // Assuming a default password; consider a different approach for real applications
       role,
-      position,
-      projectCode: "N/A",
-      status: "N/A",
-      priority: "N/A"
+      profile: [
+        { title: 'Title', info: position }
+      ],
+      courses: [
+        { Title: '', status: "" }
+      ],
+     
     });
-    setIsOpen(false);  // Close the modal after submitting
-    setName('');       // Reset form data
-    setRole('Trainee'); // Reset to default role
+    setIsOpen(false); // Close the modal after submitting
+    setName('');      // Reset form data
+    setRole('Trainee');// Reset to default role
     setPosition('Software Developer'); // Reset to default position
   };
+
   return (
     <>
-      {/* <button onClick={() => setIsOpen(true)}>Add Trainee</button> */}
       {isOpen && (
         <div className="modal">
         <div className="modal-content">
@@ -63,4 +70,4 @@ function AddTraineeModal({ addTrainee, isOpen, setIsOpen}) {
   );
 }
 
-export default AddTraineeModal
+export default AddTraineeModal;

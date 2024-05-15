@@ -1,28 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './courses.scss';
 import Course from '../../../../components/Course';
 import AddCourseModal from '../../../../components/Course/AddCourseModal';
+import { useCourseContext } from '../../../../CourseContext'; // Adjust the import path
+import { useState } from 'react';
 
 function Courses() {
-    const [courses, setCourses] = useState([
-        {
-            title: "Introduction to Programming",
-            difficulty: "Beginner",
-            hours: 30,
-            topic: ["Programming Basics", "Python", "Problem Solving"], 
-            link: "https://www.youtube.com/watch?v=Tn6-PIqc4UM"
-        },
-    ]);
+    const { courses, addCourse } = useCourseContext();
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const addCourse = (newCourse) => {
-        setCourses([...courses, newCourse]);
-    };
 
     return (
         <div className='courseContainer'>
             <div className='courseHeader'>
-              <div style={{display: "flex", justifyContent: "Center", alignItems: "center", gap: "10px"}}> 
+              <div style={{display: "flex", justifyContent: "Center", alignItems: "center", gap: "10px"}}>
                 <span style={{color: "black"}}>Create Course</span>
                 <span className='courseAdd' onClick={() => setIsModalOpen(true)}>
                   <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,6 +9,7 @@ import Dashboard from './pages/User/Manager/Dashboard'
 import Reports from './pages/User/Manager/Reports'
 import Trainees from './pages/User/Manager/Trainees'
 import Courses from './pages/User/Manager/Courses'
+import Positions from './pages/User/Manager/Positions'
 
 import TraineeDashboard from './pages/User/Trainee/Dashboard'
 import NewTrainees from './pages/User/Trainee/Trainees'
@@ -35,6 +36,7 @@ function App() {
             <Route  path='courses' element={<Courses/>}/>
             <Route  path='reports' element={<Reports/>}/>
             <Route  path='surveys' element={<Surveys/>}/>
+            <Route  path='positions' element={<Positions/>}/>
           </Route>
           <Route  path='/trainee' element={<Trainee/>}>
             <Route  path='dashboard' element={<TraineeDashboard/>}/>

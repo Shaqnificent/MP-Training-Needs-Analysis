@@ -75,5 +75,23 @@
       }
 }
 
-
-  
+.positionContainerItems{
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    gap: 10px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
+}
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    min-height: 50px;
+    margin: 10px;
+}

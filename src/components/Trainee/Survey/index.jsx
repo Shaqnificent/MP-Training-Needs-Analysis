@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './survey.scss'
 function Survey({survey}) {
+    console.log("survey",survey.title)
   return (
     <div className='surContainer'>
         <div className='dashProfile'>
@@ -14,8 +15,8 @@ function Survey({survey}) {
                 </span>
                 </div>
                 <div className='userInfo'>
-                    <span className='title'>{survey.title}</span>
-                    <span className='role'>{survey.description}</span>
+                    <span className='title'>{survey.item.title}</span>
+                    <span className='role'>{survey.item.description}</span>
                 </div>
             </div>
         </div>
@@ -33,7 +34,7 @@ function Survey({survey}) {
                 }
             >
                 <span>Questions</span>
-                <span>Iportance</span>
+                <span>Importance</span>
             </div>
 
             <div
@@ -50,8 +51,8 @@ function Survey({survey}) {
                     }
                 }
             >
-                <span>{survey.questions.length}</span>
-                <span>{survey.importance}</span>
+                <span>{survey.item.questions.length}</span> 
+                <span>{survey.item.importance}</span>
             </div>
             <div className='submitButton'>
                 <button>Attempt</button>

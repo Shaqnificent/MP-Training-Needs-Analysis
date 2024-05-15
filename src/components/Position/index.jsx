@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './survey.scss'
-function Survey({survey}) {
+import './Position.scss'
+function PositionList({position}) {
   return (
-    <div className='surContainer'>
+    <div className='PouContainer'>
         <div className='dashProfile'>
             <div className='userDetails'> 
                 <div className='userIcon'>
@@ -14,8 +14,8 @@ function Survey({survey}) {
                 </span>
                 </div>
                 <div className='userInfo'>
-                    <span className='title'>{survey.title}</span>
-                    <span className='role'>{survey.description}</span>
+                    <span className='title'>{position.title}</span>
+                    <span className='role'>{position.level}</span>
                 </div>
             </div>
         </div>
@@ -24,16 +24,46 @@ function Survey({survey}) {
             <div
                 style={
                     {
-                        display: "grid",
+                        display: "flex",
                         color: "#116CFF",
                         fontSize: "12px",
-                        gridTemplateColumns: "50% 50%",
-                        padding: "10px 5%"
+                        justifyContent: "flex-start",
+                        padding: "2.5px 5%"
                     }
                 }
             >
-                <span>Questions</span>
-                <span>Importance</span>
+                <span>Education</span>
+            </div>
+            <div
+                style={
+                    {
+                        display: "grid",
+                        color: "black",
+                        fontSize: "12px",
+                        gridTemplateColumns: "50% 50%",
+                        padding: "2.5px 5%",
+                        gap: "5px",
+                        maxHeight: "60px",
+                        overflowY: "elipsis"
+                    }
+                }
+            >
+                {position.education?.map((edu, index) => (
+                    <span>{edu}</span>
+                ))}
+            </div>
+            <div
+                style={
+                    {
+                        display: "flex",
+                        color: "#116CFF",
+                        fontSize: "12px",
+                        justifyContent: "flex-start",
+                        padding: "2.5px 5%"
+                    }
+                }
+            >
+                <span>Requirement</span>
             </div>
 
             <div
@@ -43,18 +73,49 @@ function Survey({survey}) {
                         color: "black",
                         fontSize: "12px",
                         gridTemplateColumns: "50% 50%",
-                        padding: "10px 5%",
+                        padding: "2.5px 5%",
                         gap: "5px",
                         maxHeight: "60px",
                         overflowY: "elipsis"
                     }
                 }
             >
-                <span>{survey?.questions?.length}</span>
-                <span>{survey.importance}</span>
+                {position.requirements.map((requirement, index) => (
+                    <span>{requirement}</span>
+                ))}
             </div>
-            <div className='dashAddContainer'>
-        </div>
+
+            <div
+                style={
+                    {
+                        display: "flex",
+                        color: "#116CFF",
+                        fontSize: "12px",
+                        justifyContent: "flex-start",
+                        padding: "2.5px 5%"
+                    }
+                }
+            >
+                <span>Experience (Years)</span>
+            </div>
+
+            <div
+                style={
+                    {
+                        display: "grid",
+                        color: "black",
+                        fontSize: "12px",
+                        gridTemplateColumns: "50% 50%",
+                        padding: "2.5px 5%",
+                        gap: "5px",
+                        maxHeight: "60px",
+                        overflowY: "elipsis"
+                    }
+                }
+            >
+               <span>{position.years}</span>
+            </div>
+
 
        </div>
 
@@ -63,4 +124,4 @@ function Survey({survey}) {
   )
 }
 
-export default Survey
+export default PositionList

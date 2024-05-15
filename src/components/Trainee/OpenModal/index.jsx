@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import './OpenModal.scss'
-function OptionsModal({ isOpen, onClose, surveys, courses, onAssign }) {
+import { useSurveyContext } from '../../../SurveyContext'; // Adjust the import path as needed
+import { useCourseContext } from '../../../CourseContext'; // Adjust the import path as needed
+import { useUserContext } from '../../../UserContext'; // Adjust the import path as needed
+import './OpenModal.scss';
+
+function OptionsModal({ isOpen, onClose, onAssign, selectedUsername }) {
+    const { surveys } = useSurveyContext();
+    const { courses } = useCourseContext();
+    const { addCourseToUser, addSurveyToUser } = useUserContext();
     const [selectedOption, setSelectedOption] = useState('');  // 'survey' or 'course'
 
     if (!isOpen) return null;
@@ -10,6 +17,18 @@ function OptionsModal({ isOpen, onClose, surveys, courses, onAssign }) {
     };
 
     const handleAssignment = (item) => {
+        if (selectedOption === 'course') {
+            // Create a course object with a status set to Pending
+            const courseToAssign = { ...item, status: "Pending" };
+            console.log(selectedUsername)
+            // Call addCourseToUser from the context, pass the selectedUsername and the course object
+            addCourseToUser(selectedUsername, courseToAssign);
+        }
+        else{
+            const surveyToAssign = {item};
+            addSurveyToUser(selectedUsername, surveyToAssign)
+
+        }        
         onAssign(selectedOption, item);
         onClose();  // Close modal after assignment
     };
@@ -37,4 +56,5 @@ function OptionsModal({ isOpen, onClose, surveys, courses, onAssign }) {
         </div>
     );
 }
- export default OptionsModal
+
+export default OptionsModal;

@@ -1,0 +1,87 @@
+.positionsContainer{
+    flex: 4;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #fff3da;
+    justify-content: center;
+    flex-direction: column;
+
+    .positionContainerItems{
+        width: 100%;
+        max-height: 600px;
+        overflow-y: scroll;
+        gap: 10px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-around;
+    }
+    .courseHeader{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        .courseAdd{
+            background-color: #97bfff;
+            min-width: 35px;
+            max-width: 35px;
+            max-height: 35px;
+            min-height: 35px;
+            display: flex;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .courseAdd:hover {
+            background-color: #003d9f;
+            cursor: pointer;
+        }
+    }
+}
+
+.filterContainer{
+    display: flex;
+    justify-content: flex-end;
+    .searchContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 200px;
+        min-height: 50px;
+        margin: 10px;
+    }
+    
+    input[type="text"] {
+        background-color: white;
+        max-width: 200px;
+        border: 1px solid grey;
+        height: 30px;
+        border-radius: 15px;
+        font-size: 12px;
+        color: grey;
+        width: 100%;
+        padding: 10px;
+        padding-right: 30px; 
+        box-sizing: border-box;
+    }
+    
+    .searchIcon {
+        background-color: #002868;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        border-radius: 0 15px 15px 0;
+        position: absolute;
+        right: 0px;
+        pointer-events: none; 
+        img{
+            max-width: 12px;
+        }
+    }
+    
+}

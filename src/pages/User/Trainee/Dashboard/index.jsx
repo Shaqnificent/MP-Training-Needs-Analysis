@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 import Dash from '../../../../components/Dash'
 import notice from '../../../../assets/trainee/notice.svg'
 import './dashboard.scss'
+import PositionList from '../../../../components/Position'
+import search from '../../../../assets/trainee/search.svg'
+import { useJobsContext } from '../../../../JobContext'
 function Dashboard() {
+  const {positions} = useJobsContext();
+ 
   const userData = {
     upcomingSessions: [
       { id: 1, title: "Advanced JavaScript", date: "2024-06-15", time: "10:00 AM" },
@@ -22,6 +27,17 @@ function Dashboard() {
       { id: 2, skill: "Back-end Integration", recommendedCourses: ["Node.js Basics"] }
     ]
   };
+  const filterPositions = (search) => {
+    return positions.filter(position =>
+        position.title.toLowerCase().includes(search.toLowerCase())
+    );
+};
+
+  // Function to handle search input changes
+  const handleSearchChange = (event) => {
+      setSearchTerm(event.target.value);
+  };
+  const [searchTerm, setSearchTerm] = useState('');
   const UpcomingSessions = ({ sessions }) => {
     return (
       <div className='traineeDash'>
@@ -86,9 +102,28 @@ function Dashboard() {
         
   return (
     <div className='traineeDshboardContainer'>
-      <h2>Trainee Dashboard</h2>
+      <div className='filterContainer'>
+        <div className="searchContainer">
+          <input 
+            type="text"
+            id="myInput"
+            onChange={handleSearchChange}
+            placeholder="Search for jobs..."
+            title="Type in a name"
+          />
+          <span className="searchIcon">
+              <img src={search} alt="" />
+          </span>
+        </div>
+      </div>
+      <div className='positionContainerItems'>
+        {filterPositions(searchTerm).map((position, index) => (
+            <PositionList key={index} position={position} />
+        ))}
+      </div>
+        
       <div className='traineeSection'>
-        <UpcomingSessions sessions={userData.upcomingSessions} />
+        {/* <UpcomingSessions sessions={userData.upcomingSessions} /> */}
         <Courses courses={userData.courses} />
         <Assessments assessments={userData.assessments} />
         <SkillGaps gaps={userData.skillGaps} />
