@@ -8,7 +8,7 @@ const initialSurveys = [
     {
         title: "Trainee Feedback Survey",
         description: "A survey to gather feedback from trainees about their training experience.",
-        importance: "High",
+        importance: "Low",
         questions: [
             "How satisfied are you with the training material?",
             "Was the pace of the course appropriate for your learning?",
@@ -25,6 +25,16 @@ const initialSurveys = [
             "Have you applied the learned skills in your work?",
             "What was the most valuable part of the training?",
             "What was lacking in the training?"
+        ]
+    },
+    {
+        title: "Skill Assessment",
+        description: "Identifying user current strenghts and weakenesses",
+        importance: "High",
+        questions: [
+            "What are your strengths",
+            "What are your weaknesses",
+            
         ]
     },
 ];
