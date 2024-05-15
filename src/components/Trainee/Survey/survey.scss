@@ -78,4 +78,21 @@
     .dashAdd:hover{
         background-color: #002868;
     }
+
+    .modalBackground{
+        .modalContent{
+            color: black;
+            form{
+                font-size: 12px;
+            }
+            .submitContainer{
+                display: flex;
+                justify-content: center;
+                button{
+                    background-color: #002868;
+                    color: white;
+                }
+            }
+        }
+    }
 }

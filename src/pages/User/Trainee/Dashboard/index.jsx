@@ -15,16 +15,16 @@ function Dashboard() {
       { id: 2, title: "React Fundamentals", date: "2024-06-20", time: "02:00 PM" }
     ],
     courses: [
-      { id: 1, name: "Web Development", progress: 75 },
-      { id: 2, name: "Machine Learning", progress: 40 }
+      // { id: 1, name: "Web Development", progress: 75 },
+      // { id: 2, name: "Machine Learning", progress: 40 }
     ],
     assessments: [
-      { id: 1, course: "Web Development", score: 85 },
-      { id: 2, course: "Machine Learning", score: 78 }
+      // { id: 1, course: "Web Development", score: 85 },
+      // { id: 2, course: "Machine Learning", score: 78 }
     ],
     skillGaps: [
-      { id: 1, skill: "React Hooks", recommendedCourses: ["React Advanced"] },
-      { id: 2, skill: "Back-end Integration", recommendedCourses: ["Node.js Basics"] }
+      // { id: 1, skill: "React Hooks", recommendedCourses: ["React Advanced"] },
+      // { id: 2, skill: "Back-end Integration", recommendedCourses: ["Node.js Basics"] }
     ]
   };
   const filterPositions = (search) => {
